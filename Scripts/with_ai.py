@@ -8,19 +8,19 @@ def dvizh():
 
     while True: #бесконечный цикл, дабы не юзать питон 3.9 
         try:  # для того, чтобы не выскакивала ошибка, что нажата другая кнопка
-            if keyboard.is_pressed('w'):  # идём вперёд при нажатии на "w" или "ц"
+            if keyboard.is_pressed('w') or keyboard.is_pressed('up'):  # идём вперёд при нажатии на "w" или "ц"
                 player.forward(1)
                 #движение бота
                 continue #следующая итерация
-            elif keyboard.is_pressed('s'): # поворачиваемся назад при нажатии на "s" или "ы"
+            elif keyboard.is_pressed('s') or keyboard.is_pressed('down'): # поворачиваемся назад при нажатии на "s" или "ы"
                 player.left(180)
                 #движение бота
                 continue #следующая итерация
-            elif keyboard.is_pressed('d'):  # поворачиваемся направо при нажатии на "d" или "в"
+            elif keyboard.is_pressed('d') or keyboard.is_pressed('right'):  # поворачиваемся направо при нажатии на "d" или "в"
                 player.right(90)
                 #движение бота
                 continue #следующая итерация
-            elif keyboard.is_pressed('a'):  # поворачиваемся налево при нажатии на "ф" или "a"
+            elif keyboard.is_pressed('a') or keyboard.is_pressed('left'):  # поворачиваемся налево при нажатии на "ф" или "a"
                 player.left(90)
                 #движение бота
                 continue #следующая итерация
