@@ -6,9 +6,9 @@ Turtle War-это игра-убивалка веремени, цель кото�
 
 
 # Сайт
-```
-http://vlahouse.ru/projects/tw/
-```
+
+<a href='http://vlahouse.ru/projects/tw/'>http://vlahouse.ru/projects/tw/</a>
+
 
 # Install
 
