@@ -5,10 +5,9 @@ Turtle War-это игра-убивалка веремени, цель кото�
 ```
 
 
-# Statement
+# Сайт
 ```
-Most of the game materals(including music, fonts and pictures) in this repository are collected from the web, copyright belongs to the original author.
-This repository is created just for learning python(Commercial prohibition).
+http://vlahouse.ru/projects/tw/
 ```
 
 # Install
