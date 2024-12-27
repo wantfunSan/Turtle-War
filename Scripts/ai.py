@@ -1,4 +1,5 @@
 import turtle
+import random
 
 def ai(player):
 	bot = turtle.Turtle()
