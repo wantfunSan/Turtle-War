@@ -12,7 +12,7 @@ def dvizh():
         try:  # для того, чтобы не выскакивала ошибка, что нажата другая кнопка
             if keyboard.is_pressed('w') or keyboard.is_pressed('up'):  # идём вперёд при нажатии на "w" или "ц" или на стрелку вверх
                 player.forward(1)
-                ai.test()
+                ai.test(player)
                 #движение бота
                 continue #следующая итерация
             elif keyboard.is_pressed('s') or keyboard.is_pressed('down'): # поворачиваемся назад при нажатии на "s" или "ы" или на стрелку вниз
