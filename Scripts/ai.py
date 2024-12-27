@@ -1,7 +1,11 @@
 import turtle
 import random
+import time
 
 bot = turtle.Turtle()
+bot.up()
+bot.goto(20, 0)
+bot.down()
 
 def ai(player):
 	error = random.randrange(0, 101)
@@ -19,4 +23,7 @@ def ai(player):
 			bot.right(90)
 
 	elif error >= 0 and error <= 1:
-		bot.goto(player.xcor(), player.ycor())
+		bot.goto(player.xcor() + 2, player.ycor())
+
+	if player.position() == bot.position():
+		print(f'Встреча {time.asctime()}')
