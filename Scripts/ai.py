@@ -1,3 +1,4 @@
 import turtle
 
-print(with_ai.dvizh.player.position)
+def test():
+	print(with_ai.dvizh.player.position)
