@@ -5,11 +5,9 @@ import keyboard
 
 import ai
 
-player = turtle.Turtle()
+player = turtle.Turtle() #создаём черепашку
 
 def dvizh():
-     #создаём черепашку
-
     while True: #бесконечный цикл, дабы не юзать питон 3.9 
         try:  # для того, чтобы не выскакивала ошибка, что нажата другая кнопка
             if keyboard.is_pressed('w') or keyboard.is_pressed('up'):  # идём вперёд при нажатии на "w" или "ц" или на стрелку вверх
