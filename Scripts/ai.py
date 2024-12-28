@@ -36,14 +36,14 @@ def ai(player):
 		root.title("Проигрыш") #даём ему имя
 		root.geometry("300x250") #задём масштаб
 
-		def delete():
-			root.destroy()
+		def delete(): #функция закрытия окна "Проигрыш" и продолжение игры
+			root.destroy() #закрываем окно
 			player.reset() #ставим игрока на место и удаляем все его рисунки
 			bot.reset() #ставим бота на место и удаляем все его рисунки
 			bot.up() #поднимаем перо, чтобы при перестановки бота на безопасное место под ним не появлялись линии
 			bot.goto(20, 0) #ставим на безопасное место
 			bot.down() #опускаем перо, чтобы начало рисовать
-			adapter.transition()
+			adapter.transition() #т.к. в данном файле я не могу импортировать файл "with_ai", то я создал другой файл с данным импортом и активированием функции
 
 		loose = Label(root, text = 'Вы проиграли!').pack(anchor=CENTER,expand=True) #создаём текст в окне сверху по середине
 		button = Button(root, text='Ок', width=10, command=delete).pack(anchor=CENTER,expand=True) #создаём кнопку "ок"
