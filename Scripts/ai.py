@@ -27,36 +27,81 @@ def ai(player):
 
 	if player.position() == bot.position():
 		print(f'Вы проиграли!')
-		turtle.reset()
+		player.reset()
+		bot.reset()
+		bot.up()
+		bot.goto(20, 0)
+		bot.down()
+		return
 	
 	elif (abs(player.xcor()) - abs(bot.xcor()) <= 10 and abs(player.xcor()) - abs(bot.xcor()) >= 0) and abs(player.ycor()) == abs(bot.ycor()):
 		print(f'Вы проиграли!')
-		turtle.reset()
+		player.reset()
+		bot.reset()
+		bot.up()
+		bot.goto(20, 0)
+		bot.down()
+		return
 
 	elif (abs(bot.xcor()) - abs(player.xcor()) <= 10 and abs(bot.xcor()) - abs(player.xcor()) >= 0) and abs(player.ycor()) == abs(bot.ycor()):
 		print(f'Вы проиграли!')
-		turtle.reset()
+		player.reset()
+		bot.reset()
+		bot.up()
+		bot.goto(20, 0)
+		bot.down()
+		return
 	
 	elif (abs(player.ycor()) - abs(bot.ycor()) <= 10 and abs(player.ycor()) - abs(bot.ycor()) >= 0) and abs(player.xcor()) == abs(bot.xcor()):
 		print(f'Вы проиграли!')
-		turtle.reset()
+		player.reset()
+		bot.reset()
+		bot.up()
+		bot.goto(20, 0)
+		bot.down()
+		return
 
 	elif (abs(bot.ycor()) - abs(player.ycor()) <= 10 and abs(bot.ycor()) - abs(player.ycor()) >= 0) and abs(player.xcor()) == abs(bot.xcor()):
 		print(f'Вы проиграли!')
-		turtle.reset()
+		player.reset()
+		bot.reset()
+		bot.up()
+		bot.goto(20, 0)
+		bot.down()
+		return
 	
 	elif (abs(player.ycor()) - abs(bot.ycor()) <= 10 and abs(player.ycor()) - abs(bot.ycor()) >= 0) and (abs(player.xcor()) - abs(bot.xcor()) <= 10 and abs(player.xcor()) - abs(bot.xcor()) >= 0):
 		print(f'Вы проиграли!')
-		turtle.reset()
+		player.reset()
+		bot.reset()
+		bot.up()
+		bot.goto(20, 0)
+		bot.down()
+		return
 
 	elif (abs(bot.xcor()) - abs(player.xcor()) <= 10 and abs(bot.xcor()) - abs(player.xcor()) >= 0) and (abs(bot.ycor()) - abs(player.ycor()) <= 10 and abs(bot.ycor()) - abs(player.ycor()) >= 0):
 		print(f'Вы проиграли!')
-		turtle.reset()
+		player.reset()
+		bot.reset()
+		bot.up()
+		bot.goto(20, 0)
+		bot.down()
+		return
 
 	elif (abs(player.ycor()) - abs(bot.ycor()) <= 10 and abs(player.ycor()) - abs(bot.ycor()) >= 0) and (abs(bot.xcor()) - abs(player.xcor()) <= 10 and abs(bot.xcor()) - abs(player.xcor()) >= 0):
 		print(f'Вы проиграли!')
-		turtle.reset()
+		player.reset()
+		bot.reset()
+		bot.up()
+		bot.goto(20, 0)
+		bot.down()
+		return
 
 	elif (abs(bot.xcor()) - abs(player.xcor()) <= 10 and abs(bot.xcor()) - abs(player.xcor()) >= 0) and (abs(player.ycor()) - abs(bot.ycor()) <= 10 and abs(player.ycor()) - abs(bot.ycor()) >= 0):
 		print(f'Вы проиграли!')
-		turtle.reset()
+		player.reset()
+		bot.reset()
+		bot.up()
+		bot.goto(20, 0)
+		bot.down()
+		return
