@@ -19,8 +19,7 @@ pygame.display.quit() #по окончании импортов закрывае
 
 def selected(): #функция после выбора режима
 	if my_var.get() == 0: #если выбор падёт на игру с ии(оно стоит как 0)
-		import with_ai 
-		import ai
+		import with_ai
 		root.destroy() #закрываем окно для выбора
 		with_ai.dvizh() #запускаем следующую функцию
 

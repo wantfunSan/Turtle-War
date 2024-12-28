@@ -5,8 +5,10 @@ import keyboard
 
 import ai
 
+player = turtle.Turtle()
+
 def dvizh():
-    player = turtle.Turtle() #создаём черепашку
+     #создаём черепашку
 
     while True: #бесконечный цикл, дабы не юзать питон 3.9 
         try:  # для того, чтобы не выскакивала ошибка, что нажата другая кнопка
