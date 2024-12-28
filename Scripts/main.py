@@ -37,7 +37,7 @@ my_var.set(0) #задаём первоначальное значение как
 
 choose = Label(root, text = 'Выберите Ваш режим игры:').pack(anchor=CENTER,expand=True) #создаём текст в окне сверху по середине
 r1 = Radiobutton(root, text='С ботом', variable=my_var, value=0).pack(anchor=CENTER,expand=True) #создаём переключатель в окне чуть ниже текста
-r2 = Radiobutton(root, text='С другом', variable=my_var, value=1).pack(anchor=CENTER) #создаём второй ереключатель в окне чуть ниже предыдущего
+r2 = Radiobutton(root, text='С другом', variable=my_var, value=1, state=["disabled"]).pack(anchor=CENTER) #создаём второй ереключатель в окне чуть ниже предыдущего
 button = Button(root, text='Подтвердить', width=10, command=selected).pack(anchor=CENTER,expand=True) #создаём кнопку подтверждения действия в окне чуть ниже последнего переключателя
 
 mainloop() #"залупливаем" данное окошко (по факту открываем его)
