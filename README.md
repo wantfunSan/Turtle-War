@@ -18,7 +18,7 @@ pip install keyboard, pygame
 
 # Обратная связь
 
-Telegram: @Za_skufOV
+Telegram: @Za_skufOV\n
 Discord: ggvp3869
 
 #### Готово к использованию!
