@@ -32,3 +32,4 @@ def dvizh():
                 break #конец итерации
         except:
             continue
+

@@ -19,8 +19,9 @@ pygame.display.quit() #по окончании импортов закрывае
 
 def selected(): #функция после выбора режима
 	if my_var.get() == 0: #если выбор падёт на игру с ии(оно стоит как 0)
-		import with_ai
+		import with_ai, working
 		root.destroy() #закрываем окно для выбора
+		working.start_timer() #запускаем таймер на получение монеток
 		with_ai.dvizh() #запускаем следующую функцию
 
 	elif my_var.get() == 1: #если выбор падёт на игру с другом(оно стоит как 1)
