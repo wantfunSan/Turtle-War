@@ -4,7 +4,7 @@ import threading
 conn = sqlite3.connect('wallet.bal') #создаём дата базу
 c = conn.cursor()
 
-c.execute('''CREATE TABLE IF NOT EXIST wallet(
+c.execute('''CREATE TABLE IF NOT EXISTS wallet(
 	name TEXT PRIMARY KEY, 
 	bal INTEGER
 	)''')
@@ -12,7 +12,7 @@ c.execute('''CREATE TABLE IF NOT EXIST wallet(
 
 def start_timer():
     timer = threading.Timer(60, add_money) #создаём таймер
-    time.start() #запускаем его
+    timer.start() #запускаем его
 
 def add_money():
     c.execute('SELECT bal FROM wallet WHERE name = ?', ('player',)) #проверяем наличие до этого человека в базе
