@@ -13,8 +13,21 @@ c.execute('''CREATE TABLE IF NOT EXISTS wallet(
 	)''')
 
 def skin():
-	adapter.change_shape()
-	showinfo(title=f"Успех!", message=f'Из мальчика, я превращаю в черепашку!')
+	c.execute('SELECT bal FROM wallet WHERE name = ?', ('player',)) #проверяем наличие до этого человека в базе
+	bal = c.fetchone()
+
+	if bal == None: #если нет-то создаём его
+		bal = 0
+
+	if bal[0] >= 25:
+		c.execute('UPDATE wallet SET bal = bal - 25 WHERE name = ?', ('player',)) #добавляем одну монетку
+		conn.commit()
+
+		adapter.change_shape()
+		showinfo(title=f"Успех!", message=f'Из мальчика, я превращаю в черепашку!')
+
+	if bal[0] < 25:
+		showinfo(title=f"Безуспешно", message=f'Денег не хватает(')
 
 def get_bal():
 	c.execute('SELECT bal FROM wallet WHERE name = ?', ('player',)) #проверяем наличие до этого человека в базе
@@ -30,7 +43,7 @@ def open_shop():
 	shoping_centre.title("Магазин") #даём ему имя
 	shoping_centre.geometry("300x250") #задём масштаб
 
-	bt1 = Button(shoping_centre, text = 'Сделать черепашку - 25 монет', width=15, command=skin).pack(anchor=CENTER,expand=True)
+	bt1 = Button(shoping_centre, text = 'Сделать черепашку - 25 монет', width=25, command=skin).pack(anchor=CENTER,expand=True)
 
 def shop():
 	window = Tk()
