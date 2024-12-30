@@ -27,8 +27,8 @@ def dvizh():
                 ai.ai(player) #движение бота
                 continue #следующая итерация
             elif keyboard.is_pressed('esc'):  # выходим в магазин при нажатии на "esc"
-                #import shop
-                #функция открытия магазина
+                import shop
+                shop.shop()#функция открытия магазина
                 break #конец итерации
         except:
             continue
