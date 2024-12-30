@@ -11,7 +11,7 @@ c.execute('''CREATE TABLE IF NOT EXISTS wallet(
 	
 
 def start_timer():
-    timer = threading.Timer(60, add_money) #создаём таймер
+    timer = threading.Timer(30, add_money) #создаём таймер
     timer.start() #запускаем его
 
 def add_money():
@@ -22,7 +22,7 @@ def add_money():
     	c.execute('INSERT INTO wallet VALUES(?, ?)', ('player', 0))
     	conn.commit()
 
-    c.execute('UPDATE wallet SET bal = bal + 1 WHERE name = ?', ('player',)) #добавляем одну монетку
+    c.execute('UPDATE wallet SET bal = bal + 5 WHERE name = ?', ('player',)) #добавляем одну монетку
     conn.commit()
 
     start_timer() #заново запускаем таймер
