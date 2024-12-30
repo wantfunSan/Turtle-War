@@ -1,7 +1,7 @@
 import sqlite3
 import threading
 
-conn = sqlite3.connect('wallet.bal') #создаём дата базу
+conn = sqlite3.connect('wallet.bal', check_same_thread=False) #создаём дата базу
 c = conn.cursor()
 
 c.execute('''CREATE TABLE IF NOT EXISTS wallet(
@@ -23,5 +23,6 @@ def add_money():
     	conn.commit()
 
     c.execute('UPDATE wallet SET bal = bal + 1 WHERE name = ?', ('player',)) #добавляем одну монетку
+    conn.commit()
 
-    stert_timer() #заново запускаем таймер
+    start_timer() #заново запускаем таймер

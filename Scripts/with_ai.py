@@ -4,6 +4,7 @@ import turtle
 import keyboard
 
 import ai
+import shop
 
 player = turtle.Turtle() #создаём черепашку
 
@@ -27,7 +28,6 @@ def dvizh():
                 ai.ai(player) #движение бота
                 continue #следующая итерация
             elif keyboard.is_pressed('esc'):  # выходим в магазин при нажатии на "esc"
-                import shop
                 shop.shop()#функция открытия магазина
                 break #конец итерации
         except:
