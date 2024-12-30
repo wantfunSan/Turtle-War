@@ -1,7 +1,7 @@
 import sqlite3
 import threading
 
-conn = sqlite3.connect('wallet.bal', check_same_thread=False) #создаём дата базу
+conn = sqlite3.connect('Game Data\wallet.bal', check_same_thread=False) #создаём дата базу
 c = conn.cursor()
 
 c.execute('''CREATE TABLE IF NOT EXISTS wallet(
