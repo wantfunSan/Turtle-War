@@ -6,7 +6,8 @@ import keyboard
 import ai
 import shop
 
-player = turtle.Turtle() #создаём черепашку
+player = turtle.Turtle()
+turtle.title('Turtle War') #создаём черепашку
 
 def dvizh():
     while True: #бесконечный цикл, дабы не юзать питон 3.9 
