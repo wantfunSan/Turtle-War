@@ -8,9 +8,10 @@ conn = sqlite3.connect('Game Data\wallet.bal', check_same_thread=False) #соз�
 c = conn.cursor()
 
 c.execute('''CREATE TABLE IF NOT EXISTS wallet(
-	name TEXT PRIMARY KEY, 
-	bal INTEGER
-	)''')
+        name TEXT PRIMARY KEY,
+        bal INTEGER,
+        turtle BOOL)
+    ''')
 
 def skin():
 	c.execute('SELECT bal FROM wallet WHERE name = ?', ('player',)) #проверяем наличие до этого человека в базе
@@ -25,6 +26,8 @@ def skin():
 
 		adapter.change_shape() #меняем скин
 		showinfo(title=f"Успех!", message=f'Из мальчика, я превращаю в черепашку!') #просто рофл
+		c.execute('UPDATE wallet SET turtle = True WHERE name = "player"')
+		conn.commit()
 
 	if bal[0] < 25: #если баланс меньше, чем стоимость покупи
 		showinfo(title=f"Безуспешно", message=f'Денег не хватает(') #отправляем предупреждение, что не хватает денег на покупку
@@ -33,8 +36,9 @@ def get_bal():
 	c.execute('SELECT bal FROM wallet WHERE name = ?', ('player',)) #проверяем наличие до этого человека в базе
 	bal = c.fetchone()
 
-	if bal == None: #если нет, то присваиваем ей значение 0
-		bal = 0
+	if bal is None: #если нет, то присваиваем ей значение 0
+		showinfo(title=f"Ваш баланс", message=f'Баланс: 0')
+		return
 
 	showinfo(title=f"Ваш баланс", message=f'Баланс: {bal[0]}') #отправляем баланс
 

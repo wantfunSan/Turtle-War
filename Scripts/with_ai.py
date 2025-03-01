@@ -2,6 +2,7 @@ from tkinter import *
 import turtle
 
 import keyboard
+import sqlite3 as sql
 
 import ai
 import shop
@@ -9,7 +10,20 @@ import shop
 player = turtle.Turtle()
 turtle.title('Turtle War') #создаём черепашку
 
+conn = sql.connect('Game Data/wallet.bal', check_same_thread=False)
+c = conn.cursor()
+
+c.execute('''CREATE TABLE IF NOT EXISTS wallet(
+        name TEXT PRIMARY KEY,
+        bal INTEGER,
+        turtle BOOL)
+    ''')
+
 def dvizh():
+    c.execute('SELECT turtle FROM wallet WHERE name="player"')
+    have_turtle = c.fetchone()
+    if have_turtle is not None and have_turtle[0] == 1:
+        player.shape('turtle')
     while True: #бесконечный цикл, дабы не юзать питон 3.9 
         try:  # для того, чтобы не выскакивала ошибка, что нажата другая кнопка
             if keyboard.is_pressed('w') or keyboard.is_pressed('up'):  # идём вперёд при нажатии на "w" или "ц" или на стрелку вверх
