@@ -12,6 +12,10 @@ Turtle War-это игра-убивалка веремени, цель кото�
 
 # Установка
 
+### Установка библиотек
+
+```pip install keyboard pygame pillow
+
 #### Установка игры
 <p>Можно здесь: <a href='https://github.com/wantfunSan/Turtle-War-New-Era'>https://github.com/wantfunSan/Turtle-War-New-Era</a>
 <p>А можно и здесь: <a href='http://vlahouse.ru/assets/apps/Turtle War New Era.zip'>http://vlahouse.ru/assets/apps/Turtle War New Era.zip</a>
