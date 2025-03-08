@@ -14,15 +14,17 @@ pygame.display.update() #открываем окно
 import sys
 import time
 from tkinter import *
+import random
 
 pygame.display.quit() #по окончании импортов закрываем окно с фоточкой
 
 def selected(): #функция после выбора режима
 	if my_var.get() == 0: #если выбор падёт на игру с ии(оно стоит как 0)
-		import with_ai, working
+		import with_ai
 		root.destroy() #закрываем окно для выбора
-		working.start_timer() #запускаем таймер на получение монеток
-		with_ai.dvizh() #запускаем следующую функцию
+		point2win_x = random.randrange(1, 366)
+		point2win_y = random.randrange(1, 366)
+		with_ai.dvizh(point2win_x, point2win_y) #запускаем следующую функцию
 
 	elif my_var.get() == 1: #если выбор падёт на игру с другом(оно стоит как 1)
 		pass

@@ -49,19 +49,19 @@ def open_shop():
 
 	bt1 = Button(shoping_centre, text = 'Сделать черепашку - 25 монет', width=25, command=skin).pack(anchor=CENTER,expand=True) #создаём кнопку для покупки
 
+def check_info():
+	
+
 def shop():
 	window = Tk() #создаём окошко паузы
 	
 	window.title("Пауза") #даём ему имя
 	window.geometry("300x250") #задём масштаб
-
-	def exit_from_shop(): #выход из магазина при закрытии окна
-		window.destroy()
-		adapter.transition()
 	
 	bt1 = Button(window, text = 'Показать баланс', width=15, command=get_bal).pack(anchor=CENTER,expand=True) #создаём кнопки выбора действий (показать баланс или войти в магазин)
 	bt2 = Button(window, text = 'Магазин', width=10, command=open_shop).pack(anchor=CENTER,expand=True)
+	bt3 = Button(window, text = 'Информация', width=10, command=None).pack(anchor=CENTER,expand=True)
 
-	window.protocol("WM_DELETE_WINDOW", exit_from_shop) #проверка на закрытие окна через крестик
+	
 
 	window.mainloop()
