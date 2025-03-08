@@ -22,8 +22,8 @@ def selected(): #функция после выбора режима
 	if my_var.get() == 0: #если выбор падёт на игру с ии(оно стоит как 0)
 		import with_ai
 		root.destroy() #закрываем окно для выбора
-		point2win_x = random.randrange(1, 366)
-		point2win_y = random.randrange(1, 366)
+		point2win_x = random.randrange(-365, 366)
+		point2win_y = random.randrange(-365, 366)
 		with_ai.dvizh(point2win_x, point2win_y) #запускаем следующую функцию
 
 	elif my_var.get() == 1: #если выбор падёт на игру с другом(оно стоит как 1)

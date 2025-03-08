@@ -16,21 +16,26 @@ working.start_timer_money() #запускаем таймер на получен
 
 turtle.title('Turtle War') #создаём черепашку
 
+screen = turtle.Screen()
+
 conn = sql.connect('Game Data/wallet.bal', check_same_thread=False)
 c = conn.cursor()
 
 c.execute('''CREATE TABLE IF NOT EXISTS wallet(
         name TEXT PRIMARY KEY,
         bal INTEGER,
-        turtle BOOL)
+        turtle BOOL,
+        bg BOOL)
     ''')
 
 def dvizh(point2win_x, point2win_y):
     showinfo(title=f"Информация", message=f'Твоя победная точка: по оси x:{point2win_x}; по оси y: {point2win_y}')
-    c.execute('SELECT turtle FROM wallet WHERE name="player"')
+    c.execute('SELECT turtle, bg FROM wallet WHERE name="player"')
     have_turtle = c.fetchone()
     if have_turtle is not None and have_turtle[0] == 1:
         player.shape('turtle')
+    if have_turtle is not None and have_turtle[1] == 1:
+        pass
     while True: #бесконечный цикл, дабы не юзать питон 3.9 
         try:  # для того, чтобы не выскакивала ошибка, что нажата другая кнопка
             if keyboard.is_pressed('w') or keyboard.is_pressed('up'):  # идём вперёд при нажатии на "w" или "ц" или на стрелку вверх
@@ -52,6 +57,9 @@ def dvizh(point2win_x, point2win_y):
             elif keyboard.is_pressed('esc'):  # выходим в магазин при нажатии на "esc"
                 shop.shop()#функция открытия магазина
                 break #конец итерации
+            elif keyboard.is_pressed('b'):
+                showinfo(title=f"Информация", message=f'Твоя победная точка: по оси x:{point2win_x}; по оси y: {point2win_y}\nТвои координаты: по оси x:{round(player.xcor())}; по оси y: {round(player.ycor())}') #gps
+                continue
         except:
             continue
 

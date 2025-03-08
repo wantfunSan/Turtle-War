@@ -10,7 +10,8 @@ c = conn.cursor()
 c.execute('''CREATE TABLE IF NOT EXISTS wallet(
 	name TEXT PRIMARY KEY, 
 	bal INTEGER,
-    turtle BOOL
+    turtle BOOL,
+    bg BOOL
 	)''')
 
 
@@ -27,7 +28,7 @@ def add_money():
     bal = c.fetchone()
 
     if bal == None: #если нет-то создаём его
-    	c.execute('INSERT INTO wallet VALUES(?, ?, False)', ('player', 0))
+    	c.execute('INSERT INTO wallet VALUES(?, ?, False, False)', ('player', 0))
     	conn.commit()
 
     c.execute('UPDATE wallet SET bal = bal + 5 WHERE name = ?', ('player',)) #добавляем одну монетку

@@ -55,4 +55,4 @@ def ai(player, point2win_x, point2win_y):
 		bot.up() #поднимаем перо, чтобы при перестановки бота на безопасное место под ним не появлялись линии
 		bot.goto(20, 0) #ставим на безопасное место
 		bot.down() #опускаем перо, чтобы начало рисовать
-		adapter.transition()
+		adapter.transition(point2win_x, point2win_y, True)
