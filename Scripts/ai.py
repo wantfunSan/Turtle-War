@@ -48,11 +48,11 @@ def ai(player, point2win_x, point2win_y):
 
 		root.mainloop() #"залупливаем" данное окошко (по факту открываем его)
 
-	if player.xcor() == float(point2win_x) and player.ycor() == float(point2win_y):
+	if round(player.xcor()) == point2win_x and round(player.ycor()) == point2win_y:
 		showinfo(title=f"Вы выйграли!", message=f'Поздравляю, ты победил!')
 		player.reset() #ставим игрока на место и удаляем все его рисунки
 		bot.reset() #ставим бота на место и удаляем все его рисунки
 		bot.up() #поднимаем перо, чтобы при перестановки бота на безопасное место под ним не появлялись линии
 		bot.goto(20, 0) #ставим на безопасное место
 		bot.down() #опускаем перо, чтобы начало рисовать
-		adapter.transition(point2win_x, point2win_y, True)
+		adapter.transition(point2win_x, point2win_y, non_reset=False)

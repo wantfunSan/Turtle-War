@@ -13,4 +13,8 @@ def change_bg(file_path, image):
 	resized_image = image.resize((with_ai.screen.window_width(), with_ai.screen.window_height()))
 	
 	resized_image.save(file_path)
-	with_ai.screen.bgpic(file_path) 
+	with_ai.screen.bgpic(file_path)
+	return
+
+def restart(point2win_x, point2win_y):
+	with_ai.dvizh(point2win_x, point2win_y)

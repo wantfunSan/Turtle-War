@@ -1,1 +1,1 @@
-python Scripts/main.py
+python Scripts/decode2exe.py

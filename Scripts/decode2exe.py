@@ -1,4 +1,3 @@
 import os
-import time
 
-os.system('pyinstaller Scripts/main.py -w -F -n "Turtle War New Era"')
+os.system('C:\Users\a2180\AppData\Roaming\Python\Python310\Scripts\pyinstaller.exe main.py -w -F -n "Turtle War New Era"')
